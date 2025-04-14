@@ -12,4 +12,36 @@ module.exports = {
     filename: "bundle.js",
     clean: true,
   },
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    hot: true,
+    open: true,
+    port: 3000,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ],
 };
