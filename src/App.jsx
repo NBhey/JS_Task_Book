@@ -2,15 +2,19 @@ import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 
-import HomePage from "./pages/HomePage.jsx";
+import HomePage from "./pages/HomePage/HomePage";
+import Tasks from "./pages/Tasks";
+import Contact from "./pages/Contact";
+
 
 export default function App() {
   return (
     <BrowserRouter>
       <NavigationMenu />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
@@ -18,9 +22,10 @@ export default function App() {
 
 function NavigationMenu() {
   return (
-    <nav>
-      <NavLink to="/">Главная</NavLink>
+    <nav className = 'navigation'>
+      <NavLink  to="/">Главная</NavLink>
       <NavLink to="/tasks">Задачи</NavLink>
+      <NavLink to="/contact">Контакты</NavLink>
     </nav>
   );
 }

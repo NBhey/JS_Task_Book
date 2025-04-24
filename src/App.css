@@ -1,5 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
-    background-color: #FFFDE7 ;
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #fffde7;
+}
+
+li{
+    list-style-type: none;
+}
+
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    "navigation content";
+}
+
+.active {
+  color: red;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  font-size: 40px;
 }

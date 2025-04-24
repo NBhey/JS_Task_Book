@@ -12,11 +12,14 @@ module.exports = {
     filename: "bundle.js",
     clean: true,
   },
-
+  resolve: {
+    extensions: [".js", ".jsx"], // Добавляем .jsx (и .js, если его нет)
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
     },
+    historyApiFallback: true,
     hot: true,
     open: true,
     port: 3000,
