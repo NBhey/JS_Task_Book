@@ -4,14 +4,11 @@ import "./HomePage.css";
 export default function HomePage() {
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       document.body.style.overflow = "";
-    }, 700);
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "";
-    };
+    }, 1500);
   }, []);
+
   return (
     <div className="welcome-container">
       <h1> Тренажер JavaScript </h1>

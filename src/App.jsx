@@ -5,6 +5,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import Tasks from "./pages/Tasks";
 import Contact from "./pages/Contact";
+import TasksComponent from "./components/Tasks/TasksComponent";
+import TaskContent from "./components/TaskContent/TaskContent";
 
 
 export default function App() {
@@ -14,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tasks" element={<Tasks />} />
+        <Route path="/tasks/:taskId" element={<TaskContent/>} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>

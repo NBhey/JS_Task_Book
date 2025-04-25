@@ -13,7 +13,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: [".js", ".jsx"], // Добавляем .jsx (и .js, если его нет)
+    extensions: [".js", ".jsx"], 
   },
   devServer: {
     static: {
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
     }),
     isDevelopment && new ReactRefreshWebpackPlugin(),
   ],

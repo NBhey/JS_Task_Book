@@ -1,7 +1,8 @@
 import React from "react"
+import TasksComponent from "../components/Tasks/TasksComponent"
 
 export default function Tasks() {
     return ( 
-        <h3>Задачи</h3>
+      <TasksComponent/>
     )
 }
