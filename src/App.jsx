@@ -10,13 +10,14 @@ import TaskContent from "./components/TaskContent/TaskContent";
 
 
 export default function App() {
+  
   return (
     <BrowserRouter>
       <NavigationMenu />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/tasks/:taskId" element={<TaskContent/>} />
+        <Route path="/tasks/:taskId" element={<TaskContent />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
@@ -25,8 +26,8 @@ export default function App() {
 
 function NavigationMenu() {
   return (
-    <nav className = 'navigation'>
-      <NavLink  to="/">Главная</NavLink>
+    <nav className="navigation">
+      <NavLink to="/">Главная</NavLink>
       <NavLink to="/tasks">Задачи</NavLink>
       <NavLink to="/contact">Контакты</NavLink>
     </nav>

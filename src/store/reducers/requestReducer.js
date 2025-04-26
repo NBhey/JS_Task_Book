@@ -7,9 +7,10 @@ const fetchData = async () => {
         console.log(error)
     }
 }
-const DATA = await fetchData()
+const data = await fetchData()
 
-export default reducer = (state = data, action) => {
+ const requestReducer = (state = data, action) => {
     return state
 }
 
+export default requestReducer
