@@ -10,6 +10,7 @@ const TasksComponent = () => {
   const isLoading = !tasks;
 
   const tasks = useSelector((state) => state.request.tasksArray);
+ 
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -34,7 +35,7 @@ const TasksComponent = () => {
       {tasks.map((el) => {
         return (
           <li style={{ display: "inline" }}>
-            <NavLink to={`/tasks/${el.theme}`}>{`${el.themeRU}`}</NavLink>
+            <NavLink to={`/tasks/${el.theme}`} code={el.code}>{`${el.themeRU}`}</NavLink>
           </li>
         );
       })}

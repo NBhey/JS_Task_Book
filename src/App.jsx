@@ -3,20 +3,19 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/HomePage/HomePage";
-import Tasks from "./pages/Tasks";
+import TasksPage from "./pages/TasksPage";
 import Contact from "./pages/Contact";
-import TasksComponent from "./components/Tasks/TasksComponent";
 import TaskContent from "./components/TaskContent/TaskContent";
 
 
 export default function App() {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <NavigationMenu />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/tasks" element={<TasksPage />} />
         <Route path="/tasks/:taskId" element={<TaskContent />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
