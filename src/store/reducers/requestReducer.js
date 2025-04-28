@@ -9,7 +9,7 @@ const fetchData = async () => {
 }
 const data = await fetchData()
 
- const requestReducer = (state = data, action) => {
+ const requestReducer = (state = data || null, action) => {
     return state
 }
 
