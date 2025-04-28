@@ -1,0 +1,39 @@
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.task-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    max-width: 100%;
+}
+
+.code-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px; /* Добавляем место внизу */
+}
+
+.code-item {
+    background: #2d2d2d;
+    border-radius: 5px;
+    padding: 12px;
+    overflow-x: auto; /* Горизонтальный скролл только если нужно */
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.4;
+    tab-size: 2;
+}
+
+code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', monospace;
+    color: #f8f8f2;
+}
