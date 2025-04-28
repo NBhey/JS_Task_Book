@@ -1,6 +1,6 @@
 const fetchData = async () => {
     try {
-        const response = await fetch('https://cors-anywhere.herokuapp.com/https://nbhey.ru/tasks.json');
+        const response = await fetch('/data/tasks.json');
         const data = await response.json()
         return data
     } catch (error) {
@@ -9,7 +9,7 @@ const fetchData = async () => {
 }
 const data = await fetchData()
 
- const requestReducer = (state = data || null, action) => {
+ const requestReducer = (state = data, action) => {
     return state
 }
 
