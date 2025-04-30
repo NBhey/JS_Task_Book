@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     clean: true,
+    publicPath: isDevelopment ? '/' : '/JS_Task_Book/',
   },
   resolve: {
     extensions: [".js", ".jsx"], 
@@ -19,7 +20,9 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: isDevelopment ? '/' : '/JS_Task_Book/'
+    },
     hot: true,
     open: true,
     port: 3000,
@@ -44,6 +47,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      publicPath: isDevelopment ? '/' : '/JS_Task_Book/'
     }),
     isDevelopment && new ReactRefreshWebpackPlugin(),
   ],
