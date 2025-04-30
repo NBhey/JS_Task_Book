@@ -9,10 +9,13 @@ import TaskContent from "./components/TaskContent/TaskContent";
 
 
 export default function App() {
-  
   return (
     <HashRouter>
-      <NavigationMenu />
+      <nav className="navigation">
+        <NavLink to="/">Главная</NavLink>
+        <NavLink to="/tasks">Задачи</NavLink>
+        <NavLink to="/contact">Контакты</NavLink>
+      </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tasks" element={<TasksPage />} />
