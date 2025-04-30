@@ -1,39 +1,68 @@
-.page-container {
-    display: flex;
-    min-height: 100vh;
+.preCode {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  overflow-x: auto;
 }
 
 .task-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    max-width: 100%;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.code-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px; /* Добавляем место внизу */
+.task-content__title {
+   text-align: center;
+   margin-bottom: 50px;
 }
 
-.code-item {
-    background: #2d2d2d;
-    border-radius: 5px;
-    padding: 12px;
-    overflow-x: auto; /* Горизонтальный скролл только если нужно */
+.task-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
 }
 
-pre {
-    margin: 0;
-    white-space: pre-wrap;
-    word-break: break-word;
-    font-size: 14px;
-    line-height: 1.4;
-    tab-size: 2;
+.language-javascript {
+    display: inline-block; 
+    max-width: 110%; 
+    min-width: 500px; 
 }
 
-code {
-    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', monospace;
-    color: #f8f8f2;
-}
+::-webkit-scrollbar {
+    width: 3px;
+  }
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f5f52c;
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(82,80,59,1) 48%, rgba(182,144,60,1) 98%);
+  } 
+
+  .code-block {
+    position: relative;
+  }
+  
+  .copy-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .copy-button:hover {
+    opacity: 1;
+  }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import loadingGif from "./loading.gif";
 import "./TasksComponent.css";
@@ -14,9 +14,13 @@ const TasksComponent = () => {
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       document.body.style.overflow = "";
     }, 700);
+
+    return (()=>{
+      clearTimeout(timer)
+    })
   }, []);
 
   if (!isLoading)
