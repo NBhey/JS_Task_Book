@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-
+const webpack = require('webpack');
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -9,19 +8,19 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "./bundle.js",
+    filename: "bundle.js",
     clean: true,
-    publicPath: isDevelopment ? '/' : '/JS_Task_Book/',
+    publicPath: isDevelopment ? "/" : "/JS_Task_Book/",
   },
   resolve: {
-    extensions: [".js", ".jsx"], 
+    extensions: [".js", ".jsx"],
   },
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
     },
     historyApiFallback: {
-      index: isDevelopment ? '/' : '/JS_Task_Book/'
+      index: isDevelopment ? "/" : "/JS_Task_Book/",
     },
     hot: true,
     open: true,
@@ -47,8 +46,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      publicPath: isDevelopment ? '/' : '/JS_Task_Book/'
+      filename: "index.html",
+      publicPath: "./", // Изменено на относительный путь
     }),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
+    }),
   ],
 };
