@@ -23,7 +23,6 @@ const TaskContent = () => {
     navigator.clipboard
       .writeText(code)
       .then(() => {
-        // Можно добавить уведомление об успешном копировании
         console.log("Код скопирован!");
       })
       .catch((err) => {

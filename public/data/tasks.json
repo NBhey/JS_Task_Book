@@ -118,25 +118,33 @@
       "theme": "prototype",
       "themeRU": "Прототипы",
       "code": [
-        "class User { constructor(name) { this.name = name; } } const user = new User('Max'); console.log(user.name.__proto__ === '?');",
-        "console.log(Function.prototype === {});",
-        "function myCreate(proto) { }",
-        "console.log(number.prototype === Number.prototype);",
-        "console.log(number.__proto__ === Number.prototype);",
-        "const a = { x: 1 }; console.log(a.__proto__ === Object.prototype); console.log(a.hasOwnProperty('x')); console.log(a.hasOwnProperty('__proto__')); console.log(a.__proto__.hasOwnProperty('__proto__')); function X() {} const x = new X(); console.log(x.__proto__.constructor === X);",
-        "class Samurai { constructor(name) { this.name = name } hello() { alert(this.name) } } let shogun = new Samurai('Dimych') console.log(shogun.__proto__.__proto__ === ???) console.log(shogun.__proto__.__constructor.__proto__ === ???) console.log(shogun.__proto__.__proto__.__proto__ === ???)",
-        "function Samurai(name) { this.name = name } Samurai.prototype = function hello() { { alert(this.name) } } let user = new Samurai('gas') console.log(user.__proto__.__proto__) console.log(user.__proto__.__constructor.__proto__) console.log(user.__proto__.__proto__.__proto__)"
-      ]
+"class User {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst user = new User('Max');\nconsole.log(user.name.__proto__ === '?');",
+
+"console.log(Function.prototype === {});",
+
+"function myCreate(proto) {\n  \n}",
+
+"console.log(number.prototype === Number.prototype);",
+
+"console.log(number.__proto__ === Number.prototype);",
+
+"const a = { x: 1 };\nconsole.log(a.__proto__ === Object.prototype);\nconsole.log(a.hasOwnProperty('x'));\nconsole.log(a.hasOwnProperty('__proto__'));\nconsole.log(a.__proto__.hasOwnProperty('__proto__'));\nfunction X() {}\nconst x = new X();\nconsole.log(x.__proto__.constructor === X);",
+
+"class Samurai {\n  constructor(name) {\n    this.name = name;\n  }\n  hello() {\n    alert(this.name);\n  }\n}\nlet shogun = new Samurai('Dimych');\nconsole.log(shogun.__proto__.__proto__ === ???);\nconsole.log(shogun.__proto__.constructor.__proto__ === ???);\nconsole.log(shogun.__proto__.__proto__.__proto__ === ???);",
+
+"function Samurai(name) {\n  this.name = name;\n}\nSamurai.prototype.hello = function() {\n  alert(this.name);\n};\nlet user = new Samurai('gas');\nconsole.log(user.__proto__.__proto__);\nconsole.log(user.__proto__.constructor.__proto__);\nconsole.log(user.__proto__.__proto__.__proto__);"      ]
     },
     {
       "theme": "objects",
       "themeRU": "Объекты",
       "code": [
-        "const obj = {}; const obj2 = Object.assign(obj, { p: 20 }); const obj3 = Object.assign({ y: 10 }, obj, { x: 10 }); obj.h = 40; console.log(obj3); console.log(obj2) console.log(obj)",
-        "const obj = {}; const x = { x: 10 }; const y = { y: 20 }; obj[x] = 10; obj[y] = 20; console.log(obj)",
-        "const c = { x: 1 }; const a = Object.create(c); c.x = 10 const b = Object.create(a); console.log(b.x); console.log(b);",
-        "let a = { b: 1 }; c = Object.create(a); console.log(c.b); delete c.b; console.log(c.b); delete a.b; console.log(c.b); a.z = 2; console.log(c.z); c.z = 3; console.log(a.z);"
-      ]
+"const obj = {};\nconst obj2 = Object.assign(obj, { p: 20 });\nconst obj3 = Object.assign({ y: 10 }, obj, { x: 10 });\nobj.h = 40;\nconsole.log(obj3);\nconsole.log(obj2);\nconsole.log(obj);",
+
+"const obj = {};\nconst x = { x: 10 };\nconst y = { y: 20 };\nobj[x] = 10;\nobj[y] = 20;\nconsole.log(obj);",
+
+"const c = { x: 1 };\nconst a = Object.create(c);\nc.x = 10;\nconst b = Object.create(a);\nconsole.log(b.x);\nconsole.log(b);",
+
+"let a = { b: 1 };\nlet c = Object.create(a);\nconsole.log(c.b);\ndelete c.b;\nconsole.log(c.b);\ndelete a.b;\nconsole.log(c.b);\na.z = 2;\nconsole.log(c.z);\nc.z = 3;\nconsole.log(a.z);"      ]
     },
     {
       "theme": "arrays",

@@ -11,7 +11,7 @@ import TaskContent from "./components/TaskContent/TaskContent";
 export default function App() {
   
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '/'}>
       <NavigationMenu />
       <Routes>
         <Route path="/" element={<HomePage />} />
