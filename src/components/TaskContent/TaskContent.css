@@ -27,10 +27,13 @@
   gap: 20px;
 }
 
+code[class*=language-], pre[class*=language-] {
+  text-align: center;
+  font-size: 16px;
+}
+
 .language-javascript {
-    display: inline-block; 
-    max-width: 110%; 
-    min-width: 500px; 
+  min-width: 330px;
 }
 
 ::-webkit-scrollbar {
@@ -65,4 +68,15 @@
   
   .copy-button:hover {
     opacity: 1;
+  }
+
+  @media (max-width: 860px) {
+    code[class*=language-], pre[class*=language-] {
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .language-javascript {
+      min-width: 250px;
+    }
   }
