@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import "./HomePage.css";
 
 export default function HomePage() {
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-  //   setTimeout(() => {
-  //     document.body.style.overflow = "";
-  //   }, 1500);
-  // }, []);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      document.body.style.overflow = "";
+    }, 1500);
+  }, []);
 
   return (
     <div className="welcome-container">
