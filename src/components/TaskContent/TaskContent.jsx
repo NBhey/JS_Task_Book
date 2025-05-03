@@ -18,7 +18,6 @@ const TaskContent = () => {
       codeArray = task.code.map((el) => el);
     }
   }
-  console.log(codeArray);
   const copyToClipboard = (code) => {
     navigator.clipboard
       .writeText(code)
