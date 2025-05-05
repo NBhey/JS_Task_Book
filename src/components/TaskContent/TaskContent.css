@@ -32,7 +32,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .language-javascript {
-  min-width: 330px;
+  min-width: 550px;
 }
 
 ::-webkit-scrollbar {
@@ -70,11 +70,8 @@ code[class*=language-], pre[class*=language-] {
 }
 
 /* Адаптивные стили для 1024px и ниже */
-@media (max-width: 1024px) {
-  .preCode {
-    padding: 14px;
-    max-width: 100%;
-  }
+@media (max-width: 1440px) {
+
   
   .task-content__title {
     margin-bottom: 30px;
