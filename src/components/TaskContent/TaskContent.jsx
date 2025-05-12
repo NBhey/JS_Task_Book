@@ -11,14 +11,12 @@ const TaskContent = () => {
   const taskId = useParams().taskId;
   const tasks = useSelector((state) => state.request.tasksArray);
 
-  console.log(tasks);
   for (let task of tasks) {
     if (task.theme === taskId) {
       titleName = task.themeRU;
       codeArray = task.code.map((el) => el);
     }
   }
-  console.log(codeArray);
   const copyToClipboard = (code) => {
     navigator.clipboard
       .writeText(code)

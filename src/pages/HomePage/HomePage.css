@@ -45,3 +45,16 @@
 .features strong {
   color: #e74c3c;
 }
+
+@media (max-width: 1220px){
+  .welcome-container {
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 860px){
+  .welcome-container {
+    font-size: 22px;
+  }
+}

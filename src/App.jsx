@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, NavLink, HashRouter } from "react-router-dom";
+import { Routes, Route, NavLink, HashRouter } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/HomePage/HomePage";
-import TasksPage from "./pages/TasksPage";
+import TasksPage from "./pages/TasksPage/TasksPage";
 import Contact from "./pages/Contact";
 import TaskContent from "./components/TaskContent/TaskContent";
 

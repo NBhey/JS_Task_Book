@@ -118,48 +118,52 @@
       "theme": "prototype",
       "themeRU": "Прототипы",
       "code": [
-"class User {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst user = new User('Max');\nconsole.log(user.name.__proto__ === '?');",
+        "class User {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst user = new User('Max');\nconsole.log(user.name.__proto__ === '?');",
 
-"console.log(Function.prototype === {});",
+        "console.log(Function.prototype === {});",
 
-"function myCreate(proto) {\n  \n}",
+        "function myCreate(proto) {\n  \n}",
 
-"console.log(number.prototype === Number.prototype);",
+        "console.log(number.prototype === Number.prototype);",
 
-"console.log(number.__proto__ === Number.prototype);",
+        "console.log(number.__proto__ === Number.prototype);",
 
-"const a = { x: 1 };\nconsole.log(a.__proto__ === Object.prototype);\nconsole.log(a.hasOwnProperty('x'));\nconsole.log(a.hasOwnProperty('__proto__'));\nconsole.log(a.__proto__.hasOwnProperty('__proto__'));\nfunction X() {}\nconst x = new X();\nconsole.log(x.__proto__.constructor === X);",
+        "const a = { x: 1 };\nconsole.log(a.__proto__ === Object.prototype);\nconsole.log(a.hasOwnProperty('x'));\nconsole.log(a.hasOwnProperty('__proto__'));\nconsole.log(a.__proto__.hasOwnProperty('__proto__'));\nfunction X() {}\nconst x = new X();\nconsole.log(x.__proto__.constructor === X);",
 
-"class Samurai {\n  constructor(name) {\n    this.name = name;\n  }\n  hello() {\n    alert(this.name);\n  }\n}\nlet shogun = new Samurai('Dimych');\nconsole.log(shogun.__proto__.__proto__ === ???);\nconsole.log(shogun.__proto__.constructor.__proto__ === ???);\nconsole.log(shogun.__proto__.__proto__.__proto__ === ???);",
+        "class Samurai {\n  constructor(name) {\n    this.name = name;\n  }\n  hello() {\n    alert(this.name);\n  }\n}\nlet shogun = new Samurai('Dimych');\nconsole.log(shogun.__proto__.__proto__ === ???);\nconsole.log(shogun.__proto__.constructor.__proto__ === ???);\nconsole.log(shogun.__proto__.__proto__.__proto__ === ???);",
 
-"function Samurai(name) {\n  this.name = name;\n}\nSamurai.prototype.hello = function() {\n  alert(this.name);\n};\nlet user = new Samurai('gas');\nconsole.log(user.__proto__.__proto__);\nconsole.log(user.__proto__.constructor.__proto__);\nconsole.log(user.__proto__.__proto__.__proto__);"      ]
+        "function Samurai(name) {\n  this.name = name;\n}\nSamurai.prototype.hello = function() {\n  alert(this.name);\n};\nlet user = new Samurai('gas');\nconsole.log(user.__proto__.__proto__);\nconsole.log(user.__proto__.constructor.__proto__);\nconsole.log(user.__proto__.__proto__.__proto__);"
+      ]
     },
     {
       "theme": "objects",
       "themeRU": "Объекты",
       "code": [
-"const obj = {};\nconst obj2 = Object.assign(obj, { p: 20 });\nconst obj3 = Object.assign({ y: 10 }, obj, { x: 10 });\nobj.h = 40;\nconsole.log(obj3);\nconsole.log(obj2);\nconsole.log(obj);",
+        "const obj = {};\nconst obj2 = Object.assign(obj, { p: 20 });\nconst obj3 = Object.assign({ y: 10 }, obj, { x: 10 });\nobj.h = 40;\nconsole.log(obj3);\nconsole.log(obj2);\nconsole.log(obj);",
 
-"const obj = {};\nconst x = { x: 10 };\nconst y = { y: 20 };\nobj[x] = 10;\nobj[y] = 20;\nconsole.log(obj);",
+        "const obj = {};\nconst x = { x: 10 };\nconst y = { y: 20 };\nobj[x] = 10;\nobj[y] = 20;\nconsole.log(obj);",
 
-"const c = { x: 1 };\nconst a = Object.create(c);\nc.x = 10;\nconst b = Object.create(a);\nconsole.log(b.x);\nconsole.log(b);",
+        "const c = { x: 1 };\nconst a = Object.create(c);\nc.x = 10;\nconst b = Object.create(a);\nconsole.log(b.x);\nconsole.log(b);",
 
-"let a = { b: 1 };\nlet c = Object.create(a);\nconsole.log(c.b);\ndelete c.b;\nconsole.log(c.b);\ndelete a.b;\nconsole.log(c.b);\na.z = 2;\nconsole.log(c.z);\nc.z = 3;\nconsole.log(a.z);"      ]
+        "let a = { b: 1 };\nlet c = Object.create(a);\nconsole.log(c.b);\ndelete c.b;\nconsole.log(c.b);\ndelete a.b;\nconsole.log(c.b);\na.z = 2;\nconsole.log(c.z);\nc.z = 3;\nconsole.log(a.z);"
+      ]
     },
     {
       "theme": "arrays",
       "themeRU": "Массивы",
       "code": [
-        "const arr = [1, 2]; const reverseArr = arr.reverse(); reverseArr.push(3) const unitedArr = [...arr, ...reverseArr] console.log(unitedArr)",
-        "function foo(x, y, ...rest) { console.log(rest) } foo(1, 2, 3, 4, 5, 6)"
+        "const arr = [1, 2];\nconst reverseArr = arr.reverse();\nreverseArr.push(3);\nconst unitedArr = [...arr, ...reverseArr];\nconsole.log(unitedArr);",
+
+        "function foo(x, y, ...rest) {\n  console.log(rest);\n}\nfoo(1, 2, 3, 4, 5, 6);"
       ]
     },
     {
       "theme": "functions",
       "themeRU": "Функции",
       "code": [
-        "function wtf(s) { for (let i = s.length - 1, o = ''; i >= 0; o += s[i++]) {} return o; }",
-        "function x() {} console.log(typeof x); console.log(x instanceof Object);"
+        "function wtf(s) {\n  for (let i = s.length - 1, o = ''; i >= 0; o += s[i++]) {}\n  return o;\n}",
+
+        "function x() {}\nconsole.log(typeof x);\nconsole.log(x instanceof Object);"
       ]
     },
     {
@@ -167,12 +171,18 @@
       "themeRU": "Операторы",
       "code": [
         "console.log(null || (2 && 3) || 4);",
+
         "console.log(1 + 2 + '' > 3);",
+
         "console.log(1 + '' + 2 > 3);",
-        "value4 = null ?? 10; value4 = 10 ?? null; value4 = undefined ?? null; value4 = null ?? undefined ?? 20; value4 = 20 ?? 'sahaj'; value4 = 'sahaj' ?? 20; console.log(0 ?? 'True'); console.log(0 || 'True');",
-        "console.log({} === {}); console.log([] == []); console.log(true == 1); console.log(false == 0); console.log(false === ''); console.log([] == '');",
-        "const res = 'B' + 'a' + (1 - 'hello'); console.log(res); const res2 = (true && 3) + 'd'; console.log(res2); const res3 = Boolean(true && 3) + 'd'; console.log(res3);",
-        "console.log(1 !== true); console.log(1 != true); console.log(NaN !== NaN);"
+
+        "let value4 = null ?? 10;\nvalue4 = 10 ?? null;\nvalue4 = undefined ?? null;\nvalue4 = null ?? undefined ?? 20;\nvalue4 = 20 ?? 'sahaj';\nvalue4 = 'sahaj' ?? 20;\nconsole.log(0 ?? 'True');\nconsole.log(0 || 'True');",
+
+        "console.log({} === {});\nconsole.log([] == []);\nconsole.log(true == 1);\nconsole.log(false == 0);\nconsole.log(false === '');\nconsole.log([] == '');",
+
+        "const res = 'B' + 'a' + (1 - 'hello');\nconsole.log(res);\nconst res2 = (true && 3) + 'd';\nconsole.log(res2);\nconst res3 = Boolean(true && 3) + 'd';\nconsole.log(res3);",
+
+        "console.log(1 !== true);\nconsole.log(1 != true);\nconsole.log(NaN !== NaN);"
       ]
     },
     {
