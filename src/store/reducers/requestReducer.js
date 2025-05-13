@@ -1,19 +1,14 @@
-const fetchData = async () => {
-    try {
-        const response = await fetch('/data/tasks.json');
-        const data = await response.json()
-        return data
-    } catch (error) {
-        console.log(error)
-        return []
-    }
-} 
-let data = {}
-data = await fetchData()
+const initialState = {
+  tasksArray: [],
+};
 
-console.log(data)
- const requestReducer = (state = data, action) => {
-    return  state 
-}
+const requestReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_TASKS':
+      return { ...state, tasksArray: action.payload };
+    default:
+      return state;
+  }
+};
 
-export default requestReducer
+export default requestReducer;
