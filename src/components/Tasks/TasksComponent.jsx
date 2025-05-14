@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { loadTasks } from "../../store/actions/tasks";
-import loadingGif from "./loading.gif";
 import "./TasksComponent.css";
 
 const TasksComponent = () => {
@@ -26,7 +25,7 @@ const TasksComponent = () => {
         Загрузка
         <img
           style={{ width: "45px", padding: "20px 5px 0" }}
-          src={loadingGif}
+          src={'./images/loading.gif'}
           alt="Loading"
         />
       </div>

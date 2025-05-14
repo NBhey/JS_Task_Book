@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
+const CopyPlugin = require("copy-webpack-plugin");
+
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -51,6 +53,18 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
+    }),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: "public/data/tasks.json",
+          to: "data/tasks.json" 
+        },
+        { 
+          from: "public/images",
+          to: "images" 
+        }
+      ],
     }),
   ],
 };
