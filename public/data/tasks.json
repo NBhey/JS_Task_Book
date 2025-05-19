@@ -6,7 +6,7 @@
       "code": [
         "console.log(18 + 2 + 'number' + 10)",
         "console.log('true' == true)",
-        "console.log(Boolean('false')",
+        "console.log(Boolean('false'))",
         "console.log(typeof undefined)",
         "console.log('x' == ['x'])",
         "console.log([0, 1] == [0, 1])",
@@ -191,13 +191,6 @@
       "code": [
         "var x = 10; function foo() { console.log(x); var x = 30; return 20; console.log('hello') } foo(); console.log(x)",
         "var a = 10; var b = 20; a.b = 15; console.log('a', a); console.log('a.b', a.b); console.log(b);"
-      ]
-    },
-    {
-      "theme": "strings",
-      "themeRU": "Строки",
-      "code": [
-        "var str1 = String(123); var str2 = new String(123); console.log(str2 === new String(123)); console.log(str1 === 123); console.log(str1 === '123'); console.log(str1 == str2); console.log(str1 == 123); console.log(str1 == '123');"
       ]
     }
   ]
