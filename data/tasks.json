@@ -126,8 +126,6 @@
 
         "console.log(Function.prototype === {});",
 
-        "function myCreate(proto) {\n  \n}",
-
         "console.log(number.prototype === Number.prototype);",
 
         "console.log(number.__proto__ === Number.prototype);",
